@@ -1,5 +1,5 @@
 import React from 'react';
-import {arr} from 'D:/lll/cod/react/my-app/src/constants/data.js'
+import {arr} from '../../../constants/data.js'
 import Coursebody from '../CourseBody';
 import CategoryDescription from '../CategoryDescription';
 import CategoriesButton from '../CategoriesButton';
