@@ -4,11 +4,11 @@ import CategoryDescription from '../CategoryDescription';
 import CategoriesButton from '../CategoriesButton';
 import {useParams} from 'react-router-dom';
 function CourseContainer(props) {
-    const arr = props.arr;
+    const courses = props.courses;
     let {text} = useParams();
     function getData(){
         
-        let ans = arr.courses.map((course) => 
+        let ans = courses.courses.map((course) => 
         (text == null || course.title.toLowerCase().includes(text.toLowerCase())) &&
             <Coursebody key={course.title} rating ={course.rate} title = {course.title} image = {course.image} author= {course.instructor[0].name} price = {course.price} id ={course.id} />
         

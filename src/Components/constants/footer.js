@@ -1,0 +1,1 @@
+export const footer = ["Udemy for Business", "Teach on Udemy", "Get the app", "About us", "Contact us", "Careers", "Blog", "Help and Support", "Affiliate", "Investors","Terms", "Privacy policy", "Cookie settings" ,"Sitemap","Accessibility statement"]
