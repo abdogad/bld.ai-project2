@@ -26,7 +26,7 @@ function Course(props) {
     }else{
       setShow(false)
     }
-    if(window.scrollY > 3800){
+    if(window.scrollY > 4000){
       setShow_1(true)
     }
     else{
