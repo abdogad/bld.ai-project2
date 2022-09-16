@@ -14,7 +14,6 @@ import StudentFeedback from '../../widgets/StudentFeedback'
 import Reviews from '../../widgets/Reviews'
 import Video from '../../widgets/Video'
 import Footer from '../../widgets/Footer'
-import { width } from '@mui/system'
 function Course(props) {
   const course= props.course
   const [show , setShow] = useState(false)
@@ -27,7 +26,7 @@ function Course(props) {
     }else{
       setShow(false)
     }
-    if(window.scrollY > 2850){
+    if(window.scrollY > 3800){
       setShow_1(true)
     }
     else{
