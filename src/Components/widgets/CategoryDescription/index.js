@@ -1,5 +1,4 @@
 import React from 'react';
-
 function CategoryDescription(props) {
     return (
         <div className='w-3/4'>

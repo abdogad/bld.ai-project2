@@ -1,21 +1,27 @@
 import React from 'react';
-import {arr} from '../../../constants/data.js'
 import Coursebody from '../CourseBody';
 import CategoryDescription from '../CategoryDescription';
 import CategoriesButton from '../CategoriesButton';
+import {useParams} from 'react-router-dom';
 function CourseContainer(props) {
-    function getdata(){
+    const arr = props.arr;
+    let {text} = useParams();
+    function getData(){
+        
         let ans = arr.courses.map((course) => 
-            <Coursebody key={course.title} rating ={course.rating} title = {course.title} image = {course.image} author= {course.instructors[0].name} price = {course.price} />
+        (text == null || course.title.toLowerCase().includes(text.toLowerCase())) &&
+            <Coursebody key={course.title} rating ={course.rate} title = {course.title} image = {course.image} author= {course.instructor[0].name} price = {course.price} id ={course.id} />
+        
             )
+        
         return ans
     }
     return (
-        <div className=" border-gray-300 border-solid border mx-10 my-5 px-14">
+        <div className=" border-gray-300 border-solid border mx-10 my-5 px-8 xl:mx-24">
             <CategoryDescription />
             <CategoriesButton />
             <div className='flex flex-wrap justify-left'>
-            {getdata()}
+                {getData()}
             </div>
         </div>
     );
