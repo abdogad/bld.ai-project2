@@ -19,6 +19,11 @@ function Course(props) {
   const [show , setShow] = useState(false)
   const [show_1 , setShow_1] = useState(false)
   const [windowSize, setWindowSize] = useState(window.innerWidth)
+  var limit;
+  useEffect(() => {
+    limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
+  },[])
   const scrollValue = () => {
     if(window.scrollY > 300){
       
@@ -26,7 +31,9 @@ function Course(props) {
     }else{
       setShow(false)
     }
-    if(window.scrollY > 4000){
+    console.log(limit)
+    console.log(window.scrollY)
+    if( window.scrollY > limit-1200){
       setShow_1(true)
     }
     else{
