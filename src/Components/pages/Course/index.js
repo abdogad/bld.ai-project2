@@ -14,15 +14,24 @@ import StudentFeedback from '../../widgets/StudentFeedback'
 import Reviews from '../../widgets/Reviews'
 import Video from '../../widgets/Video'
 import Footer from '../../widgets/Footer'
+import { width } from '@mui/system'
 function Course(props) {
   const course= props.course
   const [show , setShow] = useState(false)
+  const [show_1 , setShow_1] = useState(false)
   const [windowSize, setWindowSize] = useState(window.innerWidth)
   const scrollValue = () => {
-    if(window.scrollY > 300 && window.scrollY <1000){
+    if(window.scrollY > 300){
+      
       setShow(true)
     }else{
       setShow(false)
+    }
+    if(window.scrollY > 2850){
+      setShow_1(true)
+    }
+    else{
+      setShow_1(false)
     }
   }
   useEffect(() => {
@@ -48,14 +57,14 @@ function Course(props) {
     };
   }, [handleWindowResize]);
   return (
-    <div>
+    <div className='relative'>
 
         <CourseBar title={course[0].title} rating={course[0].rate} ratingCount={course[0].ratingCount} studentsCount={course[0].enrollCount}/>
         <Navbar />
         
         <CourseDescription price = {course[0].price} originalPrice={course[0].originalPrice} size={windowSize < 1280} image = {course[0].image} author={course[0].instructor} title={course[0].title} rating={course[0].rate} ratingCount={course[0].ratingCount} studentsCount={course[0].enrollCount} description={course[0].Introduction} />
-        
-        {windowSize > 1280 && <div className={show?"fixed top-16 right-32 z-50 w-80 bg-white-2 border shadow-md":"absolute top-52 right-32 w-80 bg-white-2 shadow-md"}>
+
+        {windowSize > 1280  && <div className={show ? (!show_1 ? "fixed top-16 right-32 z-50 w-80 bg-white-2 border shadow-md" : "absolute right-32  w-80 bg-white-2 border shadow-md"):"absolute top-52 right-32 w-80 bg-white-2 shadow-md"} style={show_1? {bottom:450}:{}}>
           {show || <Video image = {course[0].image}/>}
           <div className='px-3 py-3'><CourseInfo price = {course[0].price} originalPrice={course[0].originalPrice} lecture = {course[0].hoursCount} article = {course[0].articlesCount} downloadable = {course[0].downloadableResource}/></div>
         </div>}
