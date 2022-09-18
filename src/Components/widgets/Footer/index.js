@@ -7,8 +7,8 @@ function Footer() {
 
         <div className='relative'>
         <div className='mb-5 sm:hidden'>
-          <div  className=' border border-solid border-white bg-black w-20 h-11 mt-4 text-center pt-2 font-bold text-sm hover:bg-gray-900 hover:cursor-pointer'>
-            <a href="#" className='no-underline text-white-2'>Sign out</a>
+          <div  className=' border border-solid border-white bg-black w-32 h-11 flex items-center pl-5 font-bold text-sm hover:bg-gray-900 hover:cursor-pointer'>
+            <a href="#" className='no-underline text-white-2 flex'><img src={whiteLang} alt='white language'></img> English</a>
           </div>
         </div>
         <div className='flex flex-col sm:flex-row'>
@@ -46,7 +46,7 @@ function Footer() {
       
         </div>
         <div className='flex flex-row justify-between my-20'>
-          <img width={16} height={10} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt='netflix logo' className='w-32' />
+          <img width={16} height={10} src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg" alt='udemy logo' className='w-32' />
           <p className='text-white-2'>© 2022 Udemy, Inc.</p>
         </div>
     </div>
