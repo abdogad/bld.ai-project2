@@ -53,7 +53,7 @@ function Navbar() {
         <a className='no-underline text-black'>Login</a>
       </div>
       <div className='border border-solid border-white bg-black w-20 h-11 mt-4 text-center pt-2 font-bold text-sm hover:bg-gray-900 hover:cursor-pointer hidden md:block'>
-        <a className='no-underline text-white-2'>Sign out</a>
+        <a className='no-underline text-white-2'>Sign up</a>
       </div>
       <div className='border border-solid border-black w-11 h-11 mt-4 mx-2 text-center pt-2 pl-2 font-bold text-sm hover:bg-gray-100 hover:cursor-pointer hidden md:block'>
         <a className='no-underline text-black'><img src={Lang} alt='languages'></img></a>
